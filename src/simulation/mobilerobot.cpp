@@ -210,18 +210,23 @@ bool MobileRobot::getLaserDataKinect(PointCloud& kinectdata)
 		if(kinectClient->getData(kinectdata))//try to get it
 		{
 			kinectsim->setData(kinectdata);
-//			if(laserFile)
-//				laserFile->setData(kinectdata);
 			return true;
 		}
 		return false;
 	}
-//	if(laserFile)
-//	{
-//		bool b=laserFile->getData(kinectdata);
-//		kinectsim->setData(kinectdata);
-//		return b;
-//	}
+	return false;
+}
+
+bool MobileRobot::getLaserDataKinectReal(PointCloud& kinectdata)
+{
+    	if(kinectClient!=0)//if connected to server
+	{
+		if(kinectClient->getData(kinectdata))//try to get it
+		{
+			return true;
+		}
+		return false;
+	}
 	return false;
 }
 
@@ -293,12 +298,12 @@ void MobileRobot::connectClients(string ip,int port)
 		laserClient->connect(ip.c_str(),port++);
 		laser3DClient=laserClient;	
 	}
+        
         if(kinectsim)
         {
             KinectClient* kinectCl=new KinectClient;
             kinectCl->connect(ip.c_str(),port++);
             kinectClient=kinectCl;
-            
         }
 }
 

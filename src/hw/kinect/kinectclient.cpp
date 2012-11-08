@@ -29,7 +29,7 @@ bool KinectClient::getData(PointCloud& las)
 		}
 		else
 		{
-			LOG_ERROR("Error message getLaserData received something but not LaserData");	
+			LOG_ERROR("Error message getData received something but not PointCloud: from kinectclient.cpp");	
 			delete ob;
 			return false;
 		}

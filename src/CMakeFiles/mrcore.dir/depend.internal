@@ -364,6 +364,32 @@ src/CMakeFiles/mrcore.dir/hw/kinect/kinectclient.cpp.o
  src/system/thread.hpp
  src/system/time.h
 src/CMakeFiles/mrcore.dir/hw/kinect/kinectserver.cpp.o
+ /home/alex/mrcorealex/src/hw/kinect/../../data/data.h
+ /home/alex/mrcorealex/src/hw/kinect/../../data/pointcloud.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../data/pointcloud.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../system/mutex.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../base/object.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../base/streamstring.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/../base/globject.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/../gl/gltools.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/angle.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/boundingbox.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/face.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/matrix3x3.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/mrmath.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/orientationmatrix.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/segment3d.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/transformation3d.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/vector2d.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/../math/vector3d.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/composedentity.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/entityset.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/material.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/positionableentity.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/referencesystem.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/solidentity.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/../world/world.h
+ /home/alex/mrcorealex/src/hw/kinect/../../simulation/kinectsim.h
  /home/alex/mrcorealex/src/hw/kinect/../kinect.h
  /home/alex/mrcorealex/src/hw/kinect/kinectserver.cpp
  /home/alex/mrcorealex/src/hw/kinect/kinectserver.h
@@ -373,8 +399,8 @@ src/CMakeFiles/mrcore.dir/hw/kinect/kinectserver.cpp.o
  src/base/serialize.h
  src/base/stream.h
  src/base/streamstring.h
- src/data/data.h
  src/data/pointcloud.h
+ src/hw/kinect.h
  src/math/vector3d.h
  src/net/message.h
  src/net/server.h
@@ -1430,6 +1456,8 @@ src/CMakeFiles/mrcore.dir/simulation/mobilerobot.cpp.o
  /home/alex/mrcorealex/src/simulation/../data/laserdata3d.h
  /home/alex/mrcorealex/src/simulation/../data/pointcloud.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect.h
+ /home/alex/mrcorealex/src/simulation/../hw/kinect/../../data/pointcloud.h
+ /home/alex/mrcorealex/src/simulation/../hw/kinect/../../simulation/kinectsim.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/../kinect.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/kinectclient.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/kinectserver.h
@@ -1815,6 +1843,8 @@ src/CMakeFiles/mrcore.dir/simulation/simulator.cpp.o
  /home/alex/mrcorealex/src/simulation/../data/laserdata3d.h
  /home/alex/mrcorealex/src/simulation/../data/pointcloud.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect.h
+ /home/alex/mrcorealex/src/simulation/../hw/kinect/../../data/pointcloud.h
+ /home/alex/mrcorealex/src/simulation/../hw/kinect/../../simulation/kinectsim.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/../kinect.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/kinectclient.h
  /home/alex/mrcorealex/src/simulation/../hw/kinect/kinectserver.h

@@ -90,6 +90,7 @@ public:
 	bool getPose3D(Pose3D& pose);
 	bool getLaserData3D(LaserData3D& laser);
         bool getLaserDataKinect(PointCloud& kinectdata);
+        bool getLaserDataKinectReal(PointCloud& kinectdata);
 //	void invalidateLaserData();
 
 	bool move(double speed, double rot);
@@ -106,7 +107,8 @@ protected:
 	LaserSensor3DSim* laser3d;
         
         KinectSim* kinectsim;
-
+        //KinectData* kinectreal;
+        
 //Data origin of this robot
 	WheeledBase* baseClient;//can be client or datalog
 	LaserSensor* laserClient;//can be client or datalog
@@ -292,8 +294,6 @@ public:
 protected:
 	
 };
-
-
 
 }; //end namespace mr
 

@@ -62,33 +62,26 @@ ostream& operator<<(ostream& os, const KinectSim& p)
 KinectSim::KinectSim(void)
 {
 setDrawReferenceSystem(); //by default the refence system is drawn
-setColor(0,0,1);
+setColor(1,1,0);
 
 PrismaticPart *bod=new PrismaticPart;
 
 //ojo el laserSensor tiene como referencia el centro del haz, luego al montarlo
-//mecanicamente hay que tener en cuenta la transformacion
+//mecánicamente hay que tener en cuenta la transformación
 
-        double body[9][2] ={
-            {0.063, 0.122},
-            {-0.093, 0.122},
-            {-0.093, -0.063},
-            {0.063, -0.063},
-            {0.063, -0.053},
-            {0.0, -0.053},
-            {-0.040, -0.030},
-            {-0.040, 0.053},
-            {0.063, 0.053}};
-        vector<Vector2D> list;
-        int i;
-        for (i = 0; i < 9; i++)list.push_back(Vector2D(body[i][0], body[i][1]));
-        bod->setPolygonalBase(list);
-        bod->setHeight(0.155); //155mm
-        bod->setRelativePosition(Vector3D(0, 0.155 / 2, 0));
-        bod->setRelativeOrientation(X_AXIS, PI / 2);
-        bod->setColor(1.0, 0.1, 1.0);
-        //bod->setIntersectable(false);
-        (*this) += bod;
+double body[9][2]=
+{{0.063,0.122},{-0.093,0.122},{-0.093,-0.063},{0.063,-0.063},
+{0.063,-0.053},{0.0,-0.053},{-0.040,-0.030},{-0.040,0.053},{0.063,0.053}};
+vector<Vector2D> list;
+int i;
+for(i=0;i<9;i++)list.push_back(Vector2D(body[i][0],body[i][1]));
+bod->setPolygonalBase(list);
+bod->setHeight(0.155); //155mm
+bod->setRelativePosition(Vector3D(0,0.155/2,0));  
+bod->setRelativeOrientation(X_AXIS,PI/2);
+bod->setColor(1.0,0.1,1.0);
+//bod->setIntersectable(false);
+(*this)+=bod;
 }
 
 
@@ -113,19 +106,13 @@ void KinectSim::updateSensorData(World *w,float dt)
 	data.height=400;
 	data.points.resize(data.width*data.height);
 	cout<<"Updating kienct data"<<endl;
-        Vector3D pos=getAbsoluteT3D().position;
-        
-        double maxRange=10.0;
 	for(int i=0;i<data.width;i++)
 		for(int j=0;j<data.height;j++)
 		{
-			float range=1.0f+maxRange*(float)rand()/(float)RAND_MAX;
+			float range=1.0f+0.1f*(float)rand()/(float)RAND_MAX;
 		//	cout<<"Range "<<range<<endl;
-			//data.points[i+j*data.width]=Vector3D(range,-3+i/100.0,-2+j/100.0);
-                        Vector3D cloudsimulate=Vector3D(range,-data.width/200.0+i/100.0,-data.height/200.0+j/100.0);
-                        data.points[i+j*data.width]=cloudsimulate;
+			data.points[i+j*data.width]=Vector3D(i/100.0,j/100.0,range);
 		}
-        
 
 }
 //VERSION BASICA

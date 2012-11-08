@@ -34,6 +34,8 @@
 
 #include "net/server.h"
 #include "../kinect.h"
+#include "../../simulation/kinectsim.h"
+#include "../../data/pointcloud.h"
 
 namespace mr
 {
@@ -42,14 +44,14 @@ class KinectServer : public Server
 {
 public:
 	//Pointer to the laser we want to serve
-	KinectServer(Kinect* las,string name):Server(name){laser=las;}
+	KinectServer(Kinect* las,string name):Server(name){kinectlaser=las;}
 
 protected:
 	virtual string handleRequest(const string& msg);
 	//do not handling data
 	void handleData(const std::string &){}
 	
-	Kinect* laser;
+	Kinect* kinectlaser;
 };
 
 }; //end namespace mr
