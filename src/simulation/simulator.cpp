@@ -108,6 +108,8 @@ bool Simulator::load(string environment)
 			robotAux=new Doris();
                 else if(robotName=="neoKinect")
                         robotAux=new NeoKinect();
+                else if(robotName=="pioneer")
+                        robotAux=new Pioneer();
 		if(robotAux)
 		{
 			Transformation3D giro(0,0,0,0,0,yaw);

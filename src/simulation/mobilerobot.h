@@ -107,7 +107,6 @@ protected:
 	LaserSensor3DSim* laser3d;
         
         KinectSim* kinectsim;
-        //KinectData* kinectreal;
         
 //Data origin of this robot
 	WheeledBase* baseClient;//can be client or datalog
@@ -288,6 +287,22 @@ public:
                 
 	}
 	virtual ~NeoKinect()
+	{
+		
+	}
+protected:
+	
+};
+
+class Pioneer: public MobileRobot
+{
+public: 
+	Pioneer():MobileRobot("Pioneer")
+	{
+		base=new Pioneer3ATSim;
+                (*this)+=base;
+        }
+	virtual ~Pioneer()
 	{
 		
 	}
