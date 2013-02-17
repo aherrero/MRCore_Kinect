@@ -43,6 +43,7 @@ MobileRobot::MobileRobot(string n)
 	baseFile=0;
 	laser3d=0;
 	laser=0;
+        kinectsim=0;
 	laserClient=0;
 	laserFile=0;
 	datalog=0;
