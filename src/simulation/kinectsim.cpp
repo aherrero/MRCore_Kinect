@@ -67,21 +67,50 @@ setColor(1,1,0);
 PrismaticPart *bod=new PrismaticPart;
 
 //ojo el laserSensor tiene como referencia el centro del haz, luego al montarlo
-//mecánicamente hay que tener en cuenta la transformación
+//mecï¿½nicamente hay que tener en cuenta la transformaciï¿½n
 
-double body[9][2]=
-{{0.063,0.122},{-0.093,0.122},{-0.093,-0.063},{0.063,-0.063},
-{0.063,-0.053},{0.0,-0.053},{-0.040,-0.030},{-0.040,0.053},{0.063,0.053}};
+//double body[9][2]=
+//{{0.063,0.122},{-0.093,0.122},{-0.093,-0.063},{0.063,-0.063},
+//{0.063,-0.053},{0.0,-0.053},{-0.040,-0.030},{-0.040,0.053},{0.063,0.053}};
+
+//Base kinect
+double body[5][2]=
+{{0.063,-0.063},{0.063,0.020},{-0.063/2.0,0.035},{-0.093,0.020},{-0.093,-0.063}};
 vector<Vector2D> list;
 int i;
-for(i=0;i<9;i++)list.push_back(Vector2D(body[i][0],body[i][1]));
+for(i=0;i<5;i++)list.push_back(Vector2D(body[i][0],body[i][1]));
 bod->setPolygonalBase(list);
-bod->setHeight(0.155); //155mm
-bod->setRelativePosition(Vector3D(0,0.155/2,0));  
+double height=0.10;
+bod->setHeight(height); //155mm
+bod->setRelativePosition(Vector3D(0,height/2.0,-0.05));  
 bod->setRelativeOrientation(X_AXIS,PI/2);
-bod->setColor(1.0,0.1,1.0);
+bod->setColor(0.2,0.1,0.2);
 //bod->setIntersectable(false);
+
 (*this)+=bod;
+
+//Body kinect
+PrismaticPart *bod_2=new PrismaticPart;
+double body_2[8][2]=
+{{0.063,0.035},{0.063,0.075},{0.043,0.075},{0.043,0.095},{0.063,0.095},{0.063,0.13},{-0.093,0.12},{-0.093,0.035}};
+vector<Vector2D> list_2;
+for(int i=0;i<8;i++)list_2.push_back(Vector2D(body_2[i][0],body_2[i][1]));
+bod_2->setPolygonalBase(list_2);
+double height_2=0.350;
+bod_2->setHeight(height_2); //155mm
+bod_2->setRelativePosition(Vector3D(0,height_2/2.0,-0.05));  
+bod_2->setRelativeOrientation(X_AXIS,PI/2);
+bod_2->setColor(0.2,0.1,0.2);
+//bod->setIntersectable(false);
+
+(*this)+=bod_2;
+
+
+
+
+
+
+
 }
 
 
@@ -109,9 +138,11 @@ void KinectSim::updateSensorData(World *w,float dt)
 	for(int i=0;i<data.width;i++)
 		for(int j=0;j<data.height;j++)
 		{
-			float range=1.0f+0.1f*(float)rand()/(float)RAND_MAX;
+			float range=0.35f+0.1f*(float)rand()/(float)RAND_MAX;
 		//	cout<<"Range "<<range<<endl;
-			data.points[i+j*data.width]=Vector3D(i/100.0,j/100.0,range);
+                        float auxposi=i/100.0+0.1;
+                        float auxposj=(-data.height/2.0+j)/100.0;
+			data.points[i+j*data.width]=Vector3D(auxposi,auxposj,range);
 		}
 
 }
